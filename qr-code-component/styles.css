@@ -1,0 +1,123 @@
+/****************************************************** 
+ *
+ * QR Code Component - Frontmentor.io
+ * 
+ ****************************************************** 
+ */
+
+:root {
+    --font-family: Outfit, sans-serif;
+
+    --color-slate-300: hsl(212, 45%, 89%);
+    --color-slate-500: hsl(216, 15%, 48%);
+    --color-slate-900: hsl(218, 44%, 22%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+    
+    --space-500: 40px;
+    --space-300: 24px;
+    --space-200: 16px;
+    --space-100: 8px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding-left: var(--space-300);
+    padding-right: var(--space-300);
+    background-color: var(--color-slate-300);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================================
+ * QR Card
+ * ================================
+ */
+ 
+.qr-card {
+    --qr-card-font-family: var(--font-family);
+    --qr-card-background-color: var(--color-white);
+    --qr-card-heading-color: var(--color-slate-900);
+    --qr-card-text-color: var(--color-slate-500);
+    --qr-card-box-shadow-color: hsl(0, 0%, 0%, 0.0477);
+    
+    font-family: var(--qr-card-font-family);
+    background-color: var(--qr-card-background-color);
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 25px 25px var(--qr-card-box-shadow-color);
+    padding: var(--space-200);
+}
+
+.qr-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.25s ease-in-out;
+}
+
+.qr-card img:hover, .qr-card img:active {
+    transform: scale(0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .qr-card img {
+        transition: none;
+    }
+
+    .qr-card img:hover, .qr-card img:active {
+        transform: none;
+    }
+}
+
+.qr-card .content {
+    padding: 0 var(--space-200);
+}
+
+.qr-card h1 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--qr-card-heading-color);
+    line-height: 120%;
+    margin-top: var(--space-300);
+    margin-bottom: var(--space-200);
+}
+
+.qr-card p {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--qr-card-text-color);
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    margin-bottom: var(--space-300);
+}
+
+/* ================================
+ * Footer
+ * ================================
+ */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: var(--space-100);
+}
+
+.attribution { 
+    font-size: 0.6875rem; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: var(--color-slate-500); 
+}
